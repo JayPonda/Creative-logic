@@ -16,7 +16,7 @@ class Node:
     def setWord(self, val = None):
         self._isWord = val if val != None else not self._isWord
 
-    # set child property
+    # child property
 
     def getChild(self):
         return self._child
@@ -54,7 +54,7 @@ class Node:
     def getChildLen(self):
         return len(self._child)
 
-
+    # delete child based on index
     def delitChild(self, ind):
         if ind < 0 or ind >= self.getChildLen():
             raise Exception('index is out of range')
