@@ -1,6 +1,6 @@
 # general-projects
 
-individual files
+individual programs 
 
 ## python programs
 
