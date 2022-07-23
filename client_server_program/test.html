@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax demo</title>
+    <style>
+      input,
+      select {
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
+      main, header {
+        margin-left: auto;
+        margin-right: auto;
+
+        display: flex;
+        width: 600px;
+      }
+      th,
+      td {
+        text-align: left;
+        border: 1px solid black;
+        width: 50%;
+      }
+    </style>
+    <script>
+      function $(x) {
+        return document.getElementById(x);
+      }
+      function updatestatus(){
+        const removeStatus = setTimeout(function(){
+          $('status').textContent = "";
+          clearTimeout(removeStatus);
+        }, 5000)
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1 id="status"></h1>
+    </header>
+    <main>
+      <form onsubmit="submitform(event)">
+        <fieldset>
+          <legend>registration</legend>
+
+          <label for="username">username:</label>
+          <input
+            type="text"
+            name="username"
+            value="a123Ab"
+            id="usernmae"
+            required
+          />
+          <br />
+          <label for="password">password:</label>
+          <input
+            type="password"
+            name="password"
+            value="123abcabA!"
+            id="password"
+            required
+          />
+          <br />
+          <label for="name">name:</label>
+          <input type="text" name="name" value="xyz" id="name" required />
+          <br />
+          <label for="city">city:</label>
+          <select name="city" id="city" required>
+            <option value="Rajkot" selected>Rajkot</option>
+            <option value="Porbander">Porbander</option>
+            <option value="surat">surat</option></select
+          ><br />
+          <label for="company">company:</label>
+          <input type="text" name="company" value="abc" id="company" required />
+          <br />
+          <input type="reset" name="reset" value="reset" />
+          <input type="submit" name="submit" value="submit" />
+        </fieldset>
+      </form>
+
+      <fieldset style="flex-grow: 1">
+        <legend>response record</legend>
+        <h2 style="margin: 0">user data:</h2>
+        <table width="100%">
+          <tr>
+            <th>username:</th>
+            <td id="rusername"></td>
+          </tr>
+          <tr>
+            <th>password:</th>
+            <td id="rpassword"></td>
+          </tr>
+          <tr>
+            <th>name:</th>
+            <td id="rname"></td>
+          </tr>
+          <tr>
+            <th>city:</th>
+            <td id="rcity"></td>
+          </tr>
+          <tr>
+            <th>company:</th>
+            <td id="rcompany"></td>
+          </tr>
+        </table>
+      </fieldset>
+    </main>
+    <script>
+      function submitform(event) {
+        event.preventDefault();
+        const xhr = new XMLHttpRequest();
+
+        xhr.onprogress = function () {
+          console.log("on progress");
+        };
+
+        xhr.onload = function () {
+          if (parseInt(this.status / 100) === 2) {
+            const robj = JSON.parse(this.responseText);
+            $("rusername").textContent = robj['username'];
+            circletext = ""
+            for(i = 0; i < robj['password'].length; i++){
+              circletext += "&#9679"
+            }
+            $("rpassword").innerHTML = circletext;
+            $('rname').textContent = robj['name'];
+            $("rcity").textContent = robj['city'];
+            $("rcompany").textContent = robj['company'];
+            $("status").textContent = "request successfully proceed";
+          } else {
+            console.log("some error occur");
+             $("status").textContent = this.responseText;
+          }
+          updatestatus();
+        };
+
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 2) {
+            $("status").textContent = "send request";
+            console.log(2);
+            console.log(params);
+          } else if (this.readyState == 3) {
+            $("status").textContent = "loading";
+            console.log(3);
+          } else if (this.readyState == 4) {
+            $("status").textContent = "request successfully sent";
+            console.log(4);
+          } else {
+            $("status").textContent = "";
+            console.log("1 or 5");
+          }
+          updatestatus();
+        };
+
+        params = `
+        {
+          "username": "${$("usernmae").value}",
+          "password": "${$("password").value}",
+          "name": "${$("name").value}",
+          "city": "${$("city").value}",
+          "company": "${$("company").value}"
+        }`;
+
+        console.log(params, typeof params);
+        xhr.open("POST", "http://localhost/learnphp/test.php", true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.send(params);
+      }
+    </script>
+  </body>
+</html>
