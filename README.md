@@ -42,4 +42,9 @@
 -   socket is the program learning the communication between two languages like python as backend and javascript as frontend
 -   main motive is to learning communication with websockets and json
 -   more details are at socket/README.md
--   tech-stack `Python` and `Javascript`
+-   tech-stack `Python` and `JavaScript`
+
+### socket_1
+
+-   socket_1 is the program which uses general socket for communication using ports
+-   tech-stack `Python`
