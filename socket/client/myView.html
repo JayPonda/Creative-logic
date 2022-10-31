@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .textMessage,
+        .receive {
+            margin: 0 auto;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        .textMessage {
+            width: 500px;
+            margin-top: 80px;
+        }
+
+        #title,
+        #content,
+        #userName {
+            flex-grow: 1;
+            margin-left: 5px;
+        }
+
+        .receive>* {
+            border-radius: 5px;
+            padding: 5px;
+            margin: 0;
+            min-height: 18px;
+        }
+
+        label,
+        .receive {
+            display: flex;
+        }
+
+        .receive {
+            padding: 5px;
+            margin: 5px;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        #tile p {
+            margin: 0;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .output {
+            background: gainsboro;
+            margin: 0;
+            padding: 5px;
+            min-height: 20px;
+            border-radius: 5px;
+            word-wrap: normal;
+        }
+
+        h3 {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+
+            margin: 0 0 10px 0;
+            padding: 10px;
+            background-color: bisque;
+        }
+
+        .textMessage>*:not(h3) {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        #status {
+            color: rgb(208, 73, 0)
+        }
+
+        .btn {
+            border: 1px solid rgb(0, 122, 128);
+            border-radius: 3px;
+            background: rgb(28, 225, 255);
+            font-weight: 600;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            border: 1px solid rgb(0, 200, 255);
+            border-radius: 3px;
+            background: rgb(0, 53, 72);
+            color: aliceblue;
+        }
+
+        .statusUpdater {
+            position: absolute;
+            height: max-content;
+            width: 300px;
+            padding: 10px;
+            background-color: aqua;
+            border: 2px solid rgb(223, 223, 223);
+            background-color: rgba(0, 0, 0, .4);
+            box-shadow: 2px 2px 5px gray;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        #board {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="statusUpdater" id="newStatus">connection astablised</div>
+    <main class="textMessage">
+        <h3>socket demo with simple client server model</h3>
+        <div class="send">
+            <label>
+                title:
+                <input type="text" name="title" id="title" value="abc" />
+            </label><br />
+            <label>
+                content:
+                <textarea name="content" id="content" cols="1" rows="10">abc abc</textarea>
+            </label><br />
+            <input type="button" value="Send" class="btn" id="send">
+            <input type="button" value="show all at once" class="btn" id="getAll">
+            <input type="button" value="clear" class="btn" id="clearFile">
+            <input type="button" value="disconnect" class="btn" id="disconnect">
+            <p> current status: <span id="status">writting...</span></p>
+        </div>
+
+        <div class="receive">
+            <div id="tile">
+                <p>title: </p>
+                <div id="resTitle" class="output"></div>
+                <p>content: </p>
+                <div id="resContent" class="output"></div>
+            </div>
+            <table id="board">
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>content</th>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <script src="myView.js"></script>
+</body>
+
+</html>
