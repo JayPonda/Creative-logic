@@ -42,9 +42,19 @@
 -   socket is the program learning the communication between two languages like python as backend and javascript as frontend
 -   main motive is to learning communication with websockets and json
 -   more details are at socket/README.md
--   tech-stack `Python` and `JavaScript`
+-   tech-stack: `Python` and `JavaScript`
 
 ### socket_1
 
 -   socket_1 is the program which uses general socket for communication using ports
--   tech-stack `Python`
+-   tech-stack: `Python`
+
+### find_factores
+
+-   this program is for finding a factors and prime series whith two different approaches
+
+1. create and store a series in list and then just use it
+2. traverse it every time
+
+-   for the average you can say approach 2 is best, where for long tearm use of same series approach 1 is best
+-   tech-stack: `Python`
