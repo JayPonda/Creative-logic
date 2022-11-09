@@ -119,11 +119,11 @@ if __name__ == "__main__":
     </tr>""")
 
         f2Writter.writerow(
-            [no, i + 1, "Append",  str(max_num) + " A", 1000, k[0], k[1], k[2], k[3]])
+            [no, i, "Append",  str(max_num) + " A", 5000, k[0], k[1], k[2], k[3]])
         f2Writter.writerow(
-            [no + 1, i + 1, "New",  str(max_num) + " N", 1000, k1[0], k1[1], k1[2], k1[3]])
+            [no + 1, i, "New",  str(max_num) + " N", 5000, k1[0], k1[1], k1[2], k1[3]])
         f2Writter.writerow(
-            [no + 2, i + 1, "Stored",  str(max_num) + " S", 1000, k2[0], k2[1], k2[2], k2[3]])
+            [no + 2, i, "Stored",  str(max_num) + " S", 5000, k2[0], k2[1], k2[2], k2[3]])
         no += 3
 
     f1.close()
