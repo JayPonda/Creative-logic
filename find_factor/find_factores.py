@@ -1,9 +1,7 @@
 import time
 import numpy as np
 import random
-import matplotlib.pyplot as plt
 from fileOperations import PrimeHandlers
-import os
 
 
 class MathMagic():
@@ -149,93 +147,5 @@ class MathMagic():
         return self.len
 
 
-def printTest(ar, tn):
-
-    arcs = ar
-    tests = np.zeros(arcs, dtype=int)
-    testNumber = tn
-
-    testResults1 = np.zeros(arcs, dtype=float)
-    testResults2 = np.zeros(arcs, dtype=float)
-    interwal: int = testNumber / arcs
-    obj = MathMagic()
-
-    for i in range(arcs):
-
-        xNumber = random.randint((i * interwal) + 1, (i + 1) * interwal)
-        tests[i] = xNumber
-        # print(xNumber)
-
-        # test 1
-        # print("\ntest 1: find prime factors, comparing and dividing with prime")
-        k = time.time_ns()
-        set(obj.findAllFactorsByPrime(testNumber))
-        k1 = time.time_ns()
-
-        testResults1[i] = (k1 - k) * (10 ** -9)
-
-        # test 2
-        # print("\ntest 2: find prime factors, checking for prime from all factors set")
-        k = time.time_ns()
-        lis = obj.findAllFactors(testNumber)
-        k1 = time.time_ns()
-
-        testResults2[i] = (k1 - k) * (10 ** -9)
-
-    del lis
-    del obj
-
-    avg1 = np.round(np.mean(testResults1), 5)
-    first = testResults1[0]
-    testResults1[0] = testResults1[1]
-    plt.axes()
-    plt.plot(tests, testResults1, '-.', label=f"testResults1: {avg1} sec")
-    avg = np.round(np.mean(testResults2), 5)
-    plt.plot(tests, testResults2, '-o', label=f"testResults2: {avg} sec")
-    plt.title(
-        f"find prime series gen ({np.sum(testResults1)} sec) + gen factors vs try all factors ({np.sum(testResults2)} sec)")
-    print(f"secondary avg: {(first + np.mean(testResults1)) / 2}")
-
-    plt.legend()
-    return (np.round(np.sum(first), 7),
-            np.round(np.sum(testResults1), 7),
-            np.round(np.sum(testResults2), 7))
-    plt.show()
-    plt.savefig('testplot' + str(np.random.randint(1, 1000)) + '.png')
 
 
-# for i in range(3, 5):
-#     k = printTest(1000, i * 10000)
-#     os.remove('PrimeList.txt')
-#     os.remove('PrimeConfig.json')
-#     k1 = printTest(1000, i * 10000)
-#     print(f"""
-#     <tr>
-#         <th rowspan="3">{i + 2}</th>
-#         <td>New</td>
-#         <td>{i * 10000}</td>
-#         <td>1000</td>
-#         <td>{k1[0]}</td>
-#         <td>{k1[1]}</td>
-#         <td>{k1[2]}</td>
-#     </tr>
-#     <tr>
-#         <td>Append</td>
-#         <td>{i * 10000}</td>
-#         <td>1000</td>
-#         <td>{k[0]}</td>
-#         <td>{k[1]}</td>
-#         <td>{k[2]}</td>
-#     </tr>
-#     """)
-#     k = printTest(1000, i * 10000)
-#     print(f"""
-#     <tr>
-#         <td>Stored</td>
-#         <td>{i * 10000}</td>
-#         <td>1000</td>
-#         <td>{k[0]}</td>
-#         <td>{k[1]}</td>
-#         <td>{k[2]}</td>
-#     </tr>
-#     """)
