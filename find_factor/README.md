@@ -29,6 +29,24 @@
         - number => 204
         - loop(2 to 204){if 204 % loopElement == 0 then store_it!} => [1, 2, 3, 4, 6, 12, 17, 34, 51, 102, 204]
 
+## param to understand tables and graph
+
+### Mode
+- A -> Append (new generated series appended to pervious one)
+- N -> New (new generated series from scratch write to file)
+- S -> Stored (series is already generated just use it)
+
+### Max_number and Test_cases
+- Max_number is max number until series is used in.
+- Test_cases is a test numbers with random integer between max and min to find factors
+
+### Series_gen_time_unit, Prime_way, Series_gen_and_test, Conventional_way
+- Series_gen_time_unit is denoting the time to generate prime series
+- Prime_way is denoting the time to take to solve test cases (series is already generated)
+- Series_gen_and_test is the total time to generate and test series
+- Conventional_way is using second technique 'traverse it every time' (manually check)
+
+---
 <table style="width: 100%; text-align: center ;">
     <tr style="color: yellow;">
         <th>No.</th>
@@ -322,7 +340,9 @@
     </tr>
 
 </table>
+
 ![image based on above numbers](https://github.com/JayPonda/general-projects/blob/main/find_factor/testplot1.png)
+
 #
 
 <table style="width: 100%; text-align: center ;">
@@ -494,4 +514,6 @@
     </tr>
 
 </table>
+
+
 ![image based on above numbers](https://github.com/JayPonda/general-projects/blob/main/find_factor/testplot2.png)
