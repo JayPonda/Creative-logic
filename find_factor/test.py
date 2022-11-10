@@ -97,8 +97,8 @@ if __name__ == "__main__":
         <td>{t}</td>
         <td>{k[0]}</td>
         <td>{k[1]}</td>
-        <<td {'style="background: rgba(0, 255, 0, .5);"' if k[2] < k[3] else ''}>{k[2]}</td>
-        <td {'style="background: rgba(0, 255, 0, .5);"' if k[2] > k[3] else ''}>{k[3]}</td>
+        <td>{k[2]}</td>
+        <td>{k[3]}</td>
     </tr>
     <tr>
         <th>{no + 1}</th>
@@ -107,8 +107,8 @@ if __name__ == "__main__":
         <td>{t}</td>
         <td>{k1[0]}</td>
         <td>{k1[1]}</td>
-        <td {'style="background: rgba(0, 255, 0, .5);"' if k1[2] < k1[3] else ''}>{k1[2]}</td>
-        <td {'style="background: rgba(0, 255, 0, .5);"' if k1[2] > k1[3] else ''}>{k1[3]}</td>
+        <td>{k1[2]}</td>
+        <td>{k1[3]}</td>
     </tr>
     <tr>
         <th>{no + 2}</th>
@@ -117,8 +117,8 @@ if __name__ == "__main__":
         <td>{t}</td>
         <td>{k2[0]}</td>
         <td>{k2[1]}</td>
-        <td {'style="background: rgba(0, 255, 0, .5);"' if k2[2] < k2[3] else ''}>{k2[2]}</td>
-        <td {'style="background: rgba(0, 255, 0, .5);"' if k2[2] > k2[3] else ''}>{k2[3]}</td>
+        <td>{k2[2]}</td>
+        <td>{k2[3]}</td>
     </tr>""")
 
         f2Writter.writerow(
