@@ -1,4 +1,5 @@
 from fileOperations import PrimeHandlers
+import itertools
 
 
 class MathMagic():
@@ -19,7 +20,6 @@ class MathMagic():
     def __getSeries(self):
         self.series = self.handler.readFile()
         self.max = self.handler.getMax()
-        print(self.max)
 
     def __setSeries(self, first: int, last: int):
 
@@ -40,8 +40,6 @@ class MathMagic():
                 self.len += 1
 
             first += 2
-
-        print(last)
 
         self.max = last
 
@@ -142,15 +140,12 @@ class MathMagic():
 
         genPrime = set([1])
 
-        for i in range(len(factors) + 1):
+        for L in range(len(factors) + 1):
 
-            for j in range(i + 1, len(factors) + 1):
-
+            for subset in itertools.combinations(factors, L):
                 mul = 1
-
-                for v in range(i, j):
-                    mul *= factors[v]
-
+                for num in subset:
+                    mul *= num
                 genPrime.add(mul)
 
         return list(genPrime)

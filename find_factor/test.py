@@ -67,63 +67,66 @@ def printTest(ar, tn):
 
 
 if __name__ == "__main__":
-    sz = 2
+    sz = 1
+    t = 1000
+    sMax = 10000
 
     f1 = open(f'table {sz}.txt', 'x')
     f2 = open(f'table {sz}.csv', 'x')
     f2Writter = csv.writer(f2)
     f2Writter.writerow(['No', 'Index', 'Mode', 'Max_number', 'Test_cases',
                         'Series_gen_time_unit', 'Prime_way', 'Series_gen_and_test', 'Conventional_way'])
-    no = 1
-    for i in range(1, 6):
+    no = 0
+    for i in range(1, 10):
+        print(i)
         # Append
-        k = printTest(5000, i * 100000)
+        k = printTest(t, i * sMax)
         os.remove('PrimeList.txt')
         os.remove('PrimeConfig.json')
         # New
-        k1 = printTest(5000, i * 100000)
+        k1 = printTest(t, i * sMax)
         # Stored
-        k2 = printTest(5000, i * 100000)
-        max_num = i * 100000
+        k2 = printTest(t, i * sMax)
+        max_num = i * sMax
         f1.write(f"""
     <tr>
         <th>{no + 0}</th>
-        <td rowspan="3">{i + 1}</td>
+        <td rowspan="3">{i}</td>
         <td>Append</td>
         <td>{max_num}</td>
-        <td>1000</td>
+        <td>{t}</td>
         <td>{k[0]}</td>
         <td>{k[1]}</td>
-        <td>{k[2]}</td>
-        <td>{k[3]}</td>
+        <<td {'style="background: rgba(0, 255, 0, .5);"' if k[2] < k[3] else ''}>{k[2]}</td>
+        <td {'style="background: rgba(0, 255, 0, .5);"' if k[2] > k[3] else ''}>{k[3]}</td>
     </tr>
     <tr>
         <th>{no + 1}</th>
         <td>New</td>
         <td>{max_num}</td>
-        <td>1000</td>
+        <td>{t}</td>
         <td>{k1[0]}</td>
         <td>{k1[1]}</td>
-        <td>{k1[2]}</td>
-        <td>{k1[3]}</td>
+        <td {'style="background: rgba(0, 255, 0, .5);"' if k1[2] < k1[3] else ''}>{k1[2]}</td>
+        <td {'style="background: rgba(0, 255, 0, .5);"' if k1[2] > k1[3] else ''}>{k1[3]}</td>
     </tr>
     <tr>
         <th>{no + 2}</th>
         <td>Stored</td>
         <td>{max_num}</td>
-        <td>1000</td>
+        <td>{t}</td>
         <td>{k2[0]}</td>
         <td>{k2[1]}</td>
-        <td>{k2[2]}</td>
-        <td>{k2[3]}</td>
+        <td {'style="background: rgba(0, 255, 0, .5);"' if k2[2] < k2[3] else ''}>{k2[2]}</td>
+        <td {'style="background: rgba(0, 255, 0, .5);"' if k2[2] > k2[3] else ''}>{k2[3]}</td>
     </tr>""")
 
         f2Writter.writerow(
-            [no, i, "Append",  str(max_num) + " A", 5000, k[0], k[1], k[2], k[3]])
+            [no, i, "Append",  str(max_num) + " A", t, k[0], k[1], k[2], k[3]])
         f2Writter.writerow(
-            [no + 1, i, "New",  str(max_num) + " N", 5000, k1[0], k1[1], k1[2], k1[3]])
+            [no + 1, i, "New",  str(max_num) + " N", t, k1[0], k1[1], k1[2], k1[3]])
         f2Writter.writerow(
-            [no + 2, i, "Stored",  str(max_num) + " S", 5000, k2[0], k2[1], k2[2], k2[3]])
+            [no + 2, i, "Stored",  str(max_num) + " S", t, k2[0], k2[1], k2[2], k2[3]])
         no += 3
 
     f1.close()
