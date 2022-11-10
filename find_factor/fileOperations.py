@@ -128,6 +128,12 @@ class PrimeHandlers():
         else:
             return 1
 
+    def getLines(self):
+        return self.lines
+
+    def getMax(self):
+        return self.getConfig()['max']
+
 
 if __name__ == "__main__":
     def test(obj: PrimeHandlers, n, m):
