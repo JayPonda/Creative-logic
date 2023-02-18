@@ -1,5 +1,5 @@
 instr = [0, "", 0];
-//    = [acc, sign, digit]
+//buffer_values  = [acc, sign, digit]
 index = 0;
 flag = false; // initialize the acc
 count = false; // can count with acc
