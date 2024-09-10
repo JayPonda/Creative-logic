@@ -72,10 +72,12 @@ suppose you have a list of words ["toy", "boy", "too"]
 
 so you can fit into square like that (this are some of the possibilities)
 
-|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|  t  |  o  |  y  |     |  -  |  t  |  -  |     |  -  |  t  |  -  |     |  -  |  -  |  b  |
-|  o  |  -  |  o  |     |  t  |  o  |  y  |     |  b  |  o  |  y  |     |  t  |  o  |  o  |
-|  o  |  -  |  b  |     |  b  |  o  |  y  |     |  t  |  o  |  y  |     |  t  |  o  |  y  |
+|       |  1  |  2  |  3  |     |  1  |  2  |  3  |     |  1  |  2  |  3  |     |  1  |  2  |  3  |
+| :---: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| **1** |  t  |  o  |  y  |     |  -  |  t  |  -  |     |  -  |  t  |  -  |     |  -  |  -  |  b  |
+| **2** |  o  |  -  |  o  |     |  t  |  o  |  y  |     |  b  |  o  |  y  |     |  t  |  o  |  o  |
+| **3** |  o  |  -  |  b  |     |  b  |  o  |  y  |     |  t  |  o  |  y  |     |  t  |  o  |  y  |
 
 - this algorithem has not optimise yet but you can get fun and give challenge to your mind if you can think all possibilities :face_with_spiral_eyes:
+
+tech-stack: `Python`

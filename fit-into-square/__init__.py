@@ -247,7 +247,8 @@ class SquareWord:
 
 # wordList = ["truck", "true", "eat", "top", "tap",
 #             "pob", "took", "cook", "look"]
-wordList = ["toy", "boy", "too"]
+# wordList = ["toy", "boy", "too"]
+wordList = input("please enter your words: \n").split()
 obj = SquareWord(wordList)
 counter = 1
 for answer in obj.fit():
@@ -256,5 +257,5 @@ for answer in obj.fit():
 
     for row in answer:
         print("[", end="")
-        print(",".join(list(map(lambda x: x if x else " ", row))), end="")
+        print(",".join(list(map(lambda x: x if x else "-", row))), end="")
         print("] ")
