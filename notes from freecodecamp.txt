@@ -1,0 +1,549 @@
+@@ core javascript
+
+1) UNDEFIND AND NAN
+
+- variables have undefined value by initialy.
+- undefind +  1  = NaN (methemetical operation)
+- undefind + '1' = undefind (string concatenation)
+
+2) MATH OPERATION AND DATATYPE
+
+- 5 / 2 = 2.5
+- 5 / 5 = 1
+- 5 % 2 = Math.floor(5 / 2) = Math.floor(2.5) = 2
+
+3) USE OF \ 
+
+- for put " for render in string
+    - "sting \"inside\" " or 'string "inside" ' -> sring "inside"
+
+4) FIND THE LENGTH OF STRING
+
+- "string".length
+
+5) ARRAY OPERATION
+
+- arr.push('push')
+- arr.pop()
+- arr.shift()
+- arr.unshift()
+
+6) GLOBAL + LOCAL VARIABLE
+
+- var k = 5;
+  function locals(){
+    var k = 3;
+    console.log(k) -> 3
+  }
+  console.log(k) -> 5
+  locals() -> 3
+  console.log(k) -> 5
+
+7) switch
+
+- condition based switches
+
+- switch(val){
+  case 1:
+  case 2:
+  case 3:
+    result = '1 or 2 or 3'
+    break;
+  case 4:
+  case 5:
+    result = '4 or 5'
+    break;
+  default:
+    return 'not 1, 2, 3, 4, 5'
+  }
+- switch statement check ===
+
+8) ACCESS THE OBJECT PROPERTIES
+
+- var obj = {
+  name: 'jay',
+  'full name': 'j s p'
+  }
+  
+  obj.name
+  obj['full name']
+
+9) ADD AND DELETE PROPERTY TO OBJECT
+
+- obj.surname = 'xyz'
+- delete obj.surname
+
+10) CHECK IF OBJECT HAS CIRTAIN PROPERTY OR NOT
+
+- obj.hasOwnProperty('name')
+
+
+
+
+
+@@ introduction to ES6
+
+
+1) VAR CAN DECLERE SECOND TIME WITH OUT ERROR BUT LET WILL THROW
+
+- let k = 'jay';
+  let k = 'kishan'; -> throw an error
+- var k = 'jay';
+  var k = 'kishan'; -> not notified
+
+2) USE CONST KEYWORD WITH ARRAYS
+
+- you should assign value to const at declaration
+- if you take const keyword with arrays then you can change individual element but you can not change wall array after declaration
+  const arr = [1, 2, 3]
+  arr[0] = 0 -> give no error
+  arr = [3, 2, 1] -> give error
+
+3) MAKE AN IMUTEBLE OBJECT
+
+- Object.freeze(obj)
+
+4) CONVENTION FOR ANONYMOUS function
+
+- declare your function with Const keyword
+
+5) USE OF ...args
+
+- here args is convention you can wright any name
+- it will make list of arguments passes to function
+  function someFun(...args){}
+  someFun() -> args = []
+  someFun(1, 2) -> args = [1, 2]
+  someFun('', {}, [], 0) -> args = ['', {}, [], 0]
+
+6) DESTRUCTURING ASSIGNMENT TO OBJECT
+
+- const OBJ = {
+  name: {
+    firstName: 'jay',
+    lastName: 'xyz
+  },
+  age: 10
+  }
+  const {age: myAge, name :{firstName: name, lastName: surname}} = OBJ
+
+7) DESTRUCTURING ASSIGNMENT TO ARRAY
+
+- const arr = [1, 2, 3, 4, 5]
+  const [a, b] = arr;   -> a = 1, b = 2
+  const [a, b, c] = arr -> a = 1, b = 2, c = 3
+  const [a,,b,,c] = arr -> a = 1, b = 3, c = 5
+  const [a,,b,c,] = arr -> a = 1, b = 3, c = 4
+
+  [a, ...b] = arr -> not working
+  let [a, ...b] = arr
+
+  ... is only used in last
+
+8) IF YOU NEED SOME ARGUMENTS OF OBJECT IN function
+
+- const myFun = (obj) => {
+  const {name, age} = obj
+  }
+
+  const myFun = ({name, age}) => {
+
+  }
+
+9) DECLERE FUNCTION IN OBJECT
+
+- const OBJ = {
+  'name' = 'jay',
+  myFun(){
+    return this.name
+  }
+  }
+
+10) USE CLASS IN ES6
+
+- class myClass{
+  constructor(incommingvalue){
+    this.incommingvalue = incommingvalue;
+    }
+  }
+
+  const obj = new myClass();
+
+11) STRUCTURE OF OOP 
+
+- class ClassName{
+  
+  constructor(perameter1, ...){
+    this.attribut = perameter1 ... -> for private attribute use
+    this._attribut = perameter2
+  }
+
+  get showAttribut(){
+    return this.attribut
+  }
+
+  set updateAttribut( perameter3 ){
+    this._attribut = perameter3
+  }
+ }
+
+12) CONNECT HTML
+
+- in es6 there are feselity to import javascript part from js file as need for that you need to specify property type="module"
+  <script type="module" src="index.js"></script>
+
+13) EXPORT MODULE FROM FILE
+
+- export const add = (a = 0, b = 0) => {
+    return a + b
+  }
+
+  const muliply = (a = 1, b = 1)  => {
+    return a * b;
+  }
+
+  export {muliply, add}
+
+- export default is othe techniq is used to export .
+- one file has only one default export method
+- default export can not call with var, let or const keyword
+
+  export default function add(x = 0, y = 0){
+   return x + y
+  }
+  export default function(x = 0, y = 0){
+   return x + y
+ }
+
+
+14) IMPORT MODULE FROM FILE
+
+- import {add} from '../math/basicoperation.js'
+- import * as stroprn from './stringoperations.js'
+- import sum from '../math/basicoperation.js'
+
+15) JAVASCRIPT PROMISE
+
+- promise is mainly used in asynonus working task
+- it is generally constructer function so should be declere it with new keyword
+- it defindes everything is okey then what should be done or not then what
+- it takes two perameters 1) resolve 2) reject 
+- it has three stages 1) pending 2)fulfill 3)reject
+
+- const myPromise = new Promise((resolve, reject) => {/*logic here(if -> resolve, else->reject)*/});
+
+- if your promise secussed then for immediatly the process start is desinging by then keyword
+
+- myPromise.then(result => {/*logic here*/})
+
+-if your promise failed then for immediatly the process start is designing by catch keyword
+
+- myPromise.catch(error => {/*logic here*/})
+
+
+
+@@ introduction to re module
+
+1) SIMPLY CHECK THE PATTERN IS AVALABLE OR NOT IN STRING
+
+- let text = "thisistext";
+  let pattern = /is|Is/;
+  pattern.test(text); -> true
+
+2) FLAG 
+
+- you can spacify the condition with defining flag in regex
+  like for ignorecase -> i
+  let pattern = /is/i
+
+3) FINDING A MATCHES IN TEXT
+
+- regex is by default greedy so it finds longest possible part thet fitts in pattern
+- text.match(pattern); -> if no match then return null 
+                       -> ['pattern', index: i, input: 'input', groups: groups]
+  
+- i is the first match word index in string
+- groups to find more then one variable in string you should use g flag
+
+- text.match(/pattern/ig) -> if no match then return null
+                         -> ['match1', 'match2'] 
+
+4) PATTERN SYNTEX FOR MATCHING PATTERN
+
+- it is using as proxy charector in pattern
+- /.attern/    -> allow any charector in place of .
+- /p[aeiou]n/  -> to bound this any charector you can use []
+- /P[A-F5-9]N/ -> to bound sequencial charector use -
+- /p[^G-Z1-4]N/-> it's same as above but in negative way called negated character sets
+
+5) PATTERN BASED ON REPETATION
+
+- /p+/g        -> it's allow the group is there are one or more P
+- /p*/g        -> it's allow the group is there are zero or more P
+- /pq?r/       -> it's allow that q is avalable or not in pattern
+
+- if you want to find smallest possible which fit the pattern is possible by ?
+- /p[a-p]*?i/  -> it's find lazy matching
+- /^p+/ig      -> matches only word is string first character if match
+- /p+q$/ig     -> it's matches if pattern is only at the end
+- /(p|q)r+s/   -> p or q where r can 0 or more with end s
+- /(p)q\1/     -> p q and  the \1 refer to first group which is p so pqp
+
+6) PERTICULAR CLASSES REPRENTING THE SET OF CHERECTERS
+
+- \w -> [A-Za-z0-9_]
+- \W -> [^A-Za-z0-9_]
+- \d -> [1-9]
+- \D -> [^1-9]
+- \s -> [ \r\f\n\v\t]
+- \S -> [^ \r\f\n\v\t]
+
+7) QUANTATIVE SPACIFIERS IN REGEX
+
+- /a{3,5}h}/ -> 3 to 5 times
+- /a{3,}h/   -> 3 to more times
+- /a{3}h/    -> 3 times
+
+8) POSITIVE AND NEGATIVE LOOKAHEAD
+
+- it's basiclly check is the string follow the pattern or not
+- it's not for match
+- /a(?=u)/  -> it check u is in that or not
+- /a(?!u)/  -> it check u is not in string
+- /(?<=u)a/ -> it check a when u is avalable
+- /(?<!u)a/ -> it check a when u is unavalable
+
+9) .REPLACE() METHOD
+
+- text.replace(pattern, newWord)
+- text.replace(/([&<>\"'])/g, (match) => {perticular change})
+
+10) DEFINDE REGEX WITH STRING AND MAKE OBJECT
+
+- let pattern = new RegExp('patterns', 'flegs')
+
+11) METHODS CONNECTED WITH REGEX
+
+- let str = pattern.exec(text) -> find -> [pattern, index: i]
+- if fleg is 'g' then you can find all ocarance with it by loop otherwise it will give you only first iteration
+- let found = text.matchAll(pattern)
+- replace method change all the searches by one
+- let str = text.search(pattern) -> it will give you first index of match
+
+
+@@ datastructure
+
+1) ARRAY IN JAVASCRIPT
+
+- push(), pop(), unshift(), shift() function for adding or removing element from arr
+- arr.splice(x, y, ...z) -> at index x , from there x + y index delete there and add ...z 
+- arr.splice(x) -> at index x to end it will delete
+- arr.splice(x, y) -> at index x to x + y it will delete
+- arr.slice(x, y) -> at index x to y - 1 index it will copy this value
+- arr.slice(x) -> at index x to end of the array
+- str.split(delimiter/pattern) -> will split string by delemiter (default space)
+- [...arr] -> copy wall array
+- arr.indexOf('element') -> gives you a index if presents else gives -1
+- arr to string -> arr.toString() (just remove a square brackets)
+- reverse array by array.reverse()
+- (...arr).flat() -> convert 2D arr into 1D (3D -> 2D)
+- [].concat(...arr) -> convert 2D arr into 1D (3D -> 2D)
+
+2) OBJECTS IN JAVASCRIPT
+
+- obj[attribut]/obj.attribute
+- delete obj.attribut
+- obj.hasOwnProperty(attribut)/attribut in obj
+- for...in -> for iterate over object
+  for(let attribute in obj){
+    /*logic here*/
+  }
+- Object.keys() //Object class
+
+3) BOOLEAN
+
+- to convert var to boolean Boolean(str) == true/false
+- Nan, undefined, false, "", null in this case it return false
+
+
+4) STRING
+
+- string is immutable in javascript so you can change entier string but not charecter
+- 'a'.charCodeAt() -> 97 char to asci code
+- String.fromCharCode(97) -> 'a'
+
+5) SET
+
+- new Set(arr)
+
+@@ object orianted programming in javascript
+
+1) YOU CAN MAKE A OBJECT WITH FUNCTION
+
+- function Fun(par){
+    this.attribut = par
+  }
+
+- const Fun = function(par){
+    this.attribut = par
+  }
+
+  let newfun = new Fun()
+
+function Fun(){}
+Fun.prototype = {
+  attribut: val
+}
+
+  let newfun = Object.create(Fun.prototype)
+
+2) CHECK THE VARIABLE IS INSTANCE OF OBJECT OR not
+
+- newfun instanceof Fun;
+
+3) ADD ATTRIBUT TO MAIN OBJECT
+
+- Fun.prototype.attribut = somevar
+- instance.attribut -> somevar
+
+4) CONSTRUCTER PROPERTY
+
+- Obj.constructor
+
+5) ADD MORE PROPERTIES TO MAIN OBJECT
+
+- Class.prototype = {
+    attribut: atr,
+    fun: function(){
+    }
+  }
+
+6) USE OF ISPROTOTYPEOF
+
+- Classprototype.isPrototypeOf(obj); -> 
+- Class -> supertype, Obj-> subtype, Class -> subtype
+- Class.prototype -> object -> subtype of Object class
+- main thinking :- you can not take a record of all the objects which is maid from main class
+                :- solution - check prototype (object) every time 
+                :- object.isownproperty -> list check x -> prototype 
+- Objec is sa main class -> Object.prototype -> custem class
+  
+7) INHERITANCE 
+
+- function Fun(){}
+  Fun.prototype = Object.create(otherObj.prototype) -> inherit from otherType
+  let obj = new Fun()
+  obj.constructer -> constructor of otherObj
+
+  to change this behavior to show only constructer of Fun
+
+  Fun.prototype.constructor = Fun;
+  obj.constructer -> constructer of Fun
+
+- Fun.prototype.method = function(){/*some logic*/}
+
+8) OVERRIDE INHERITED METHOD 
+
+- you can simply redefind method as it overrite itself
+
+- Fun.prototype.method = function(){/*some other logic*/}
+
+- obj1 = {/*attr1*/}
+- obj2 = {/*attr2*/}
+
+- if you want to add some property to unrelated objects or conditionally adding
+- let addAtrrs = function(obj){
+    obj.prop = function(){
+      /*logic here*/
+    }
+  }
+
+ addAttrs(obj1) -> it will add property in object
+
+9) CLOSURE
+
+- function Fun(){
+  let attribut = val,   -> use let keyword to minimize the scope within the function
+
+  this.giveAttributValue = function(){
+    return attribut
+  }
+} 
+
+10) IMMEDIATLY ACCESS THE FUNCTION
+
+- let Fun = (function(){ -> it should be annonumas function
+  return{ -> it is an object
+    /*object*/
+  }
+})();
+
+Fun.
+
+@@  Functional programming
+
+1) REVISE
+
+- splice(chain main array) and slice
+- as python, here also assign by location is used 
+- One of the core principles of functional programming is to not change things. 
+  Changes lead to bugs. It's easier to prevent bugs knowing that your functions don't change anything, 
+  including the function arguments or any global variable.
+- always declare your dependencies explicitly.
+
+2) MAP
+
+- map method give an array
+- The map method iterates over each item in an array and returns a new array containing 
+  the results of calling the callback function on each element. 
+  It does this without mutating the original array.
+
+3) FOREACH
+
+- you can use array by this also.
+- arr.forEach((i) => fun(i))
+
+4) FILTER
+
+- filter calls a function on each element of an array and returns a new array containing only the elements for which that function returns true.
+- arr.filter((i) => i + 1 < 5)
+
+5) CONCAT 
+
+- [1, 2, 3].concat([4, 5, 6])
+
+6) REDUCE
+
+- The reduce method allows for more general forms of array processing, 
+  and it's possible to show that both filter and map can be derived as special applications of reduce. 
+  The reduce method iterates over each item in an array and returns a single value (i.e. string, number, object, array). 
+  This is achieved via a callback function that is called on each iteration.
+
+  The callback function accepts four arguments. 
+  The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration, 
+  the second is the current element being processed, the third is the index of that element and the fourth is the array upon which reduce is called.
+
+- it will take four arguments -> acc, item, index, array
+
+- array.reduce((acc, item, index, array) => callbackfun, initial_value)
+
+7) SORT 
+
+- default methon for sort the elements may give unexpected results so it is necessary to give callback function in javascript.
+- When such a callback function, normally called compareFunction, is supplied, 
+  the array elements are sorted according to the return value of the compareFunction: 
+  If compareFunction(a,b) returns a value less than 0 for two elements a and b, then a will come before b. 
+  If compareFunction(a,b) returns a value greater than 0 for two elements a and b, then b will come before a. 
+  If compareFunction(a,b) returns a value equal to 0 for two elements a and b, then a and b will remain unchanged.
+- it mutates the original array
+- arr.sort(callbackfun)
+
+8) JOIN
+
+- join method is used to join array as string
+- arr.join('delemeter')
+
+9) EVERY AND SOME (AS ALL AND ANY)
+
+- arr.every(conditionfun)
+- arr.some(conditionfun)

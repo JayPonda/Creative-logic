@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body >
+    
+    <div class="card">
+        <div class="bimg" id="heading">
+            <!-- img, status on center image, date and time at right bottom -->
+            <img src="test2.jpg" alt="image not supported">
+            <div class="content">
+                <span id="status" class="centered"> Weather Info</span>
+                <span id="current_date" class="right">25, jun 2021</span>
+            </div>
+        </div>
+
+        
+
+        <div id="details" class="details">
+            <div id="header">
+                <!-- details about default wedther and future wedther -->
+                <!-- forcast details if demand -->klkl
+            </div>
+            <div id="tab1">
+                <div id="title">
+                    <span id="title_status"> today's weather </span>
+                </div>
+                <div id="info">
+                    <div id="form">
+                        <input type="text" placeholder="London" value="London" id="city" style="width: 70%;">
+                        <button type="submit" id="submit1" onclick="searchcity(1)">submit</button>
+                    </div><br>
+                    <div class="core flex-body">
+                        <div class="flex-row">
+                            <img src="test2.jpg" alt="" id="icne1">
+                        </div>
+                        <div class="flex-column">
+                            <span id="short1" class="location1"> description </span>
+                            <span id="disc1" class="location1" >disc</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab2">
+                <div id="title">
+                    <span id="title_status"> today's weather </span>
+                </div>
+                <div id="info">
+                    <div id="form">
+                        <label>longitude: </label><input type="text" placeholder="-0.1257"  value = "-0.1257" id="lon" style="width: 20%;">
+                        <label>latitude: </label><input type="text" placeholder="51.5085" value ="51.5085" id="lat" style="width: 20%;">
+                        <button type="submit" id="submit2" onclick="searchcity(2)">submit</button>
+                    </div><br>
+                    <div class="flex-body">
+                        <div class="flex-row">
+                            <img src="test2.jpg" alt="" id="icne2">
+                        </div>
+                        <div class="flex-column">
+                            <span id="location" class="location1"> location</span>
+                            <span id="short2" class="location1"> description </span>
+                            <span id="disc2" class="location1" >disc</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab3">
+                <div id="title">
+                    <span id="title_status"> today's physical weather </span>
+                </div>
+                <div id="info">
+                    <div class="flex-body">
+                        <div class="flex-column">
+                            <span id="tem" class="location1">temparature </span>
+                            <span id="min-tem" class="location1">preasure </span>
+                            <span id="max-tem" class="location1">humidity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="advanced">
+            <button class="goto" onclick="previous()">previous</button>
+            <button class="goto" onclick="next()">next</button>
+    </div>
+
+    
+    <script src="home.js"></script>
+</body>
+</html>

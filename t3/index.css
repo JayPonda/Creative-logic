@@ -1,0 +1,204 @@
+body{
+    margin: 10px;
+    background-color: rgb(26, 26, 26);
+}
+
+.mainbody{
+    margin: 0 auto;
+    border: 2px solid black;
+    min-width: 350px;
+    max-width: 700px;
+    max-height: 710px;
+    
+    background-image: linear-gradient(-45deg,  rgb(43, 43, 43), gray);
+    color: black;
+
+    border-radius: 15px;
+}
+
+.box{
+    border: 2px solid black;
+    background-color: rgb(43, 43, 43);
+    border-radius: 20px;
+
+    margin: 10px;
+}
+
+.header{
+    
+    height: 70px;
+    margin: 10px;
+    padding: 5px;
+    
+    background-image: linear-gradient(45deg, rgb(53, 175, 63), rgb(6, 141, 6), rgb(40, 175, 51));
+    color: rgb(255, 255, 255);
+    box-shadow: 3px 3px 15px 3px rgb(53, 53, 53);
+
+    font-size: 60px;
+    font-weight: 550;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+
+    border-radius: 20px;
+}
+
+.records{
+    
+    height: 100px;
+
+    color: aliceblue;
+    font-size: 30px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.score{
+    margin: 10px;
+    top: auto;
+    bottom: auto;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.functions{
+    top: auto;
+    bottom: auto;
+
+    display: flex;
+    text-align: center;
+    padding: 5px;
+}
+
+button{
+    height: 25px;
+    font-weight: 600;
+    margin: 2px;
+    flex-grow: 1;
+
+    border-radius: 10px;
+
+    justify-content: space-between;
+    box-shadow: 2px 2px 10px 2px rgb(68, 68, 68);
+}
+
+.mainbord{
+    height: 350px;
+    margin: 10px;
+
+    
+}
+
+.bord{
+    border: 5px double black;
+    height: 310px;
+    width: 310px;
+    margin: 15px auto;
+
+    left: auto;
+    right: auto;
+
+    background-color: rgb(117, 117, 117);
+     background-image: linear-gradient(rgb(43, 43, 43), rgb(105, 105, 105));
+    box-shadow: 2px 2px 15px 2px rgb(0, 0, 0);
+
+    display: flex;
+}
+
+.col1, .col2, .col3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    
+}
+
+#cell11, #cell12, #cell13, #cell21, #cell22, #cell23, #cell31, #cell32, #cell33{
+    background-color: rgb(255, 229, 145);
+    
+    height: 92px;
+    width: 92px;
+
+    margin: 6px;
+    justify-content: space-around;
+    
+}
+
+
+button:hover{
+    background-color: rgb(96, 175, 96);
+    color: aliceblue;
+}
+
+.you, .co{
+    background-color: rgb(203, 0, 221);
+    box-shadow: 2px 2px 7px rgb(122, 121, 50);
+    height: 35px;
+    width: 35px;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    border-radius: 25px;
+    border: 6px double rgb(177, 177, 177);
+
+    left: auto;
+    right: auto;
+}
+
+.co{
+    background-color:  rgb(0, 16, 156);
+}
+
+
+
+#cell11, #cell13, #cell22, #cell31, #cell33{
+    background-color:  rgb(255, 254, 168);
+}
+
+.mytable{
+    display: grid;
+    width: 320px;
+    height: 300px;
+    padding: 2px;
+    color: azure;
+    
+    text-align: center;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: none;
+}
+
+th, .th{
+    min-width: 60px;
+    font-weight: 800;
+    border-bottom: 2px solid gray;
+    padding: 5px;
+}
+
+#my{
+    color: rgb(28, 28, 255);
+}
+
+#your{
+    color: rgb(211, 43, 226);
+}
+
+#total{
+    color: gold;
+}
+
+@media screen and (max-width: 420px) {
+    .header{
+        font-size: 40px;
+    }
+
+    .records{
+        font-size: 23px;
+    }
+    
+}

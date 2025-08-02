@@ -1,0 +1,198 @@
+body{
+    height: 100%;
+    background-color: rgb(190, 190, 190);
+}
+
+.card{
+    width:500px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 10px 10px 10px rgb(116, 114, 255);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(31, 223, 159);
+}
+
+.bimg{
+    height: 250px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    border-top-right-radius: 20px;
+}
+
+.bimg img{
+    height: 250px;
+    width: 100%;
+    margin: 0 auto;
+    vertical-align: middle;
+    border-top-right-radius: 20px;
+}
+
+.bimg .content{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .3);
+    color:#ffffff;
+    bottom: 0;
+    text-align: center;
+    width: 500px;
+    height: 110px;
+}
+
+.bimg .content .centered{
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    
+    transition: translate(-50%, -50%);
+}
+
+
+.bimg .content .right{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.details{
+    height: 300px;
+    padding: 5px;
+    background-image: linear-gradient(to bottom right, rgb(238, 183, 255),  rgb(128, 130, 255), rgb(0, 0, 0));
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#header{
+    margin: 12px;
+    height: 30px;
+
+    background-color: blue;
+    border: 1px dotted black;
+
+    text-align: center;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+    display: none;
+}
+
+
+#title{
+
+    margin: 12px;
+    height: 30px;
+
+    font-family:  Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+
+    text-align: center;
+    
+    vertical-align: middle;
+    
+    background-color: rgb(41, 169, 255);
+    background-image: linear-gradient(rgba(41, 169, 255, .5), rgba(3, 48, 172, 0.568));
+
+    box-shadow: 5px 5px 40px rgba(46, 255, 185, 0.836);
+}
+
+#info{
+    padding: 12px;
+    flex-grow: 1;
+}
+
+#tab1, #tab2, #tab3, #tab4{
+    display: none;
+    margin: 12px;
+    flex-grow: 1;
+    min-height: 220px;
+    max-height: 100%;
+}
+
+#tab1{
+    display: inline;
+}
+
+.flex-row{
+    flex-direction: row;
+    display: flex;
+    background-image: linear-gradient(30deg, rgb(61, 61, 61), rgb(172, 172, 172), rgb(58, 58, 58));
+}
+
+.flex-column{
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    padding: 4px;
+}
+
+.core{
+    height: 300px;
+}
+
+.flex-body{
+    display: flex;
+    border: 3px solid rgb(8, 39, 37);
+    padding: 4px;
+    height: max-content;
+    max-height: 160px;
+    box-shadow: 5px 5px 7px black;
+}
+
+.flex-body div:not([class*="flex"]){
+    border: 1px solid black;
+    flex: 1 1 300px;
+    width: 300px;
+}
+
+#icne1, #icne2{
+    border: 2px solid rgb(0, 0, 0);
+    height: 105px;
+}
+
+.location{
+    flex-direction: row;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: rgb(255, 139, 236);
+    margin: 2px;
+    height: 100%;
+}
+
+.location1{
+    flex-direction: row;
+    font-size: 25px;
+    font-weight: 700;
+    background-color: aqua;
+    margin: 2px;
+    height: 100%;
+}
+
+.location2{
+    flex-direction: row;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: aqua;
+    margin: 2px;
+    height: 100%;
+}
+
+.advanced{
+    height: 20px;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(0, 121, 168);
+    background-image: linear-gradient(45deg, rgb(0, 121, 168), rgb(0, 42, 59));
+    border-bottom-left-radius: 15px;
+}
+
+button{
+    width: 100px;
+    height: 25px;
+    font-weight: 800;
+}

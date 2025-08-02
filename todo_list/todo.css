@@ -1,0 +1,127 @@
+body {
+  background-color: rgb(13, 13, 24);
+  color: antiquewhite;
+  padding-top: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: rgb(26, 29, 56);
+  color: rgb(254, 255, 213);
+  border: 4px double white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.header {
+  background-color: rgb(36, 40, 78);
+  color: rgb(240, 241, 135);
+  border: 3px solid rgb(83, 83, 83);
+  text-align: center;
+}
+
+#bord {
+  background-color: rgb(46, 51, 97);
+  border: 2px dotted rgb(131, 131, 131);
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 30px;
+}
+
+#newtask {
+  color: rgb(34, 16, 31);
+  padding: 5px;
+  font-size: 21px;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+}
+
+#taskDetails {
+  background-color: rgb(179, 255, 163);
+
+  padding: 3px;
+  flex-grow: 1;
+}
+
+#taskIndex {
+  height: 28px;
+  width: 28px;
+  text-align: center;
+
+  background-color: white;
+  color: rgb(22, 53, 35);
+
+  margin-right: 10px;
+  padding: 3px;
+
+  border-radius: 5px;
+}
+
+#add,
+#clean,
+#reindex {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 4px;
+  color: black;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+#clean:hover,
+#add:hover,
+#reindex:hover {
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 7px;
+}
+
+.btn {
+  display: none;
+  font-weight: 800;
+}
+
+#newtask:hover .btn {
+  cursor: pointer;
+  display: inline;
+}
+
+#normal {
+  float: right;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: rgb(0, 179, 0);
+  color: white;
+  cursor: pointer;
+}
+
+#danger {
+  float: right;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: rgb(230, 0, 0);
+  color: white;
+  cursor: pointer;
+}
+
+#balance {
+  float: right;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: rgb(37, 192, 171);
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    width: 900px;
+  }
+}

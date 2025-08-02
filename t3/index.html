@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic-tac-tao</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="mainbody">
+        <div class="header">
+            tic - tac - tao
+        </div>
+
+        
+        <div class="box functions">
+            <button id = "newgame" onclick="newgame(0, 1)">new game</button>
+            <button id = "reset" onclick="reset()">reset</button>
+            <button id = "active" onclick="active()">show score</button>
+        </div>
+        
+
+        <div class="box records">
+            <div class="score"><span>I win</span><span id="my">0</span></div>
+            <div class="score"><span>You win</span><span id="your">0</span></div>
+            <div class="score"><span>total fun</span><span id="total">0</span></div>
+        </div>
+        
+        <div class="box mainbord">
+            <div class="bord">
+                <table class="mytable">
+                    <tr>
+                        <th class="th">round</th>
+                        <th class="th">i win</th>
+                        <th class="th">you win</th>
+                        <th class="th">no win</th>
+                    </tr>
+                </table>
+                <div class="col1">
+                    <div id="cell11" onclick="addMove(true, this)"></div>
+                    <div id="cell21" onclick="addMove(true, this)"></div>
+                    <div id="cell31" onclick="addMove(true, this)"></div>
+                </div>
+                <div class="col2">
+                    <div id="cell12" onclick="addMove(true, this)"></div>
+                    <div id="cell22" onclick="addMove(true, this)"></div>
+                    <div id="cell32" onclick="addMove(true, this)"></div>
+                </div>
+                <div class="col3">
+                    <div id="cell13" onclick="addMove(true, this)"></div>
+                    <div id="cell23" onclick="addMove(true, this)"></div>
+                    <div id="cell33" onclick="addMove(true, this)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
